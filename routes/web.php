@@ -30,5 +30,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/formusuarios', [UsuarioController::class, 'create'])->name('usuarios.create');
     Route::post('/formusuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
     Route::get('/listausuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::put('/admin/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
+    Route::delete('/admin/usuarios/{id}', [UsuarioController::class, 'destroy'])->name('usuarios.destroy');
 
 });
